@@ -8,7 +8,7 @@ import { Amplify } from 'aws-amplify'
 import awsconfig from "./aws-exports"
 import "@aws-amplify/ui-react/styles.css";
 import { AppProvider } from './AppContext'
-import Post from './pages/post/post'
+import Post from './pages/post/Post'
 
 Amplify.configure(awsconfig)
 
