@@ -1,14 +1,15 @@
 
 import NavBar from './components/NavBar'
-import ProfileHeader from './components/ProfileHeader'
-import BlogList from './components/BlogList'
+
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom"
 import "./index.css"
 import { Amplify } from 'aws-amplify'
 import awsconfig from "./aws-exports"
 import "@aws-amplify/ui-react/styles.css";
 import { AppProvider } from './AppContext'
-import Post from './pages/post/Post'
+import Admint from './pages/Admin/Admin'
+import BlogViewer from './components/BlogViewer'
+import Admin from './pages/Admin/Admin'
 
 Amplify.configure(awsconfig)
 
@@ -22,16 +23,8 @@ function App() {
             <NavBar />
           </div>
             <Routes>
-              <Route path="/" element={
-                <div className="h-full flex flex-row items-start px-4 overflow-hidden">
-                  <ProfileHeader />
-
-                  <BlogList />
-
-                
-                </div>} 
-                />
-              <Route path="/post" element={<Post  />}/>
+              <Route path="/" element={<BlogViewer />} />
+              <Route path="/admin" element={<Admin  />}/>
             </Routes>
           
         </div>

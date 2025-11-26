@@ -13,7 +13,7 @@ export default function ProfileHeader() {
       <div className="text-dark-gray/70 text-center">
         Welcome to my personal blog where I investigate Molecular Biology and Genetic Councilling.
       </div>
-      <Link to="/post">
+      <Link to="/admin">
           Post
       </Link>
     </div>
