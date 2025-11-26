@@ -1,34 +1,42 @@
-import { useState } from 'react'
-import NavBar from './components/NavBar'
-import HeroSection from './components/HeroSection'
-import "./index.css"
-import Footer from './components/Footer/Footer'
-import ServicesSection from './components/ServicesSection/ServicesSection'
-import ContactSection from './components/ContactSection/ContactSection'
-import GallerySection from './components/GallerySection/GallerySection'
 
+import NavBar from './components/NavBar'
+import ProfileHeader from './components/ProfileHeader'
+import BlogList from './components/BlogList'
+import { Route, BrowserRouter as Router, Routes } from "react-router-dom"
+import "./index.css"
+import Post from './pages/post/post'
+import { Amplify } from 'aws-amplify'
+import awsconfig from "./aws-exports"
+import "@aws-amplify/ui-react/styles.css";
+import { AppProvider } from './AppContext'
+
+Amplify.configure(awsconfig)
 
 function App() {
-  const [count, setCount] = useState(0)
-
+  
   return (
-    <div id="home" className="scroll-smooth">
-      {/* <NavBar /> */}
-      <div className="flex flex-col">
-        MINISA KANE
-        {/* <HeroSection />
-        <div id="services">
-          <ServicesSection />
+    <AppProvider>
+      <Router>
+        <div id="home" className="flex flex-col scroll-smooth h-screen overflow-y-hidden">
+          <div className="">
+            <NavBar />
+          </div>
+            <Routes>
+              <Route path="/" element={
+                <div className="h-full flex flex-row items-start px-4 overflow-hidden">
+                  <ProfileHeader />
+
+                  <BlogList />
+
+                
+                </div>} 
+                />
+              <Route path="/post" element={<Post  />}/>
+            </Routes>
+          
         </div>
-        <div id="gallery">  
-          <GallerySection />
-        </div>
-        <div id="contact"> 
-          <ContactSection />
-        </div>
-        <Footer /> */}
-      </div>
-    </div>
+      </Router>
+    </AppProvider>
   )
 }
 

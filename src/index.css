@@ -10,7 +10,7 @@ body {
   width: 8px;
 }
 .scrollable-div::-webkit-scrollbar {
-  background: #222;
+  background: #f9f9f9;
   border-radius: 4px;
 }
 
@@ -25,7 +25,7 @@ html {
 
   color-scheme: dark;
   color: rgba(255, 255, 255, 0.87);
-  background-color: #151419;
+  background-color: #f9f9f9;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -54,4 +54,24 @@ a:hover {
   button {
     background-color: #f9f9f9;
   }
+}
+
+
+.scrollable-div::-webkit-scrollbar {
+  width: 8px;
+}
+.scrollable-div::-webkit-scrollbar-track {
+  background: #bdc7d0;
+  border-radius: 2px;
+}
+.scrollbar-div::-webkit-scrollbar-thumb {
+  background: #ffff
+}
+.scrollbar-div::-webkit-scrollbar-thumb:hover {
+  background: #e6e6e6aa
+}
+
+.scrollable-div {
+  scrollbar-width: thin;
+  scrollbar-color: #dedddd #8b8989
 }
