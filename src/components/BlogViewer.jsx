@@ -3,7 +3,7 @@ import BlogList from './BlogList'
 
 const BlogViewer = () => {
     return(
-        <div className="h-full flex flex-row items-start px-4 overflow-hidden">
+        <div className="h-full flex flex-col items-start overflow-hidden overflow-y-auto scrollable-div">
             <ProfileHeader />
             <BlogList />
         </div>

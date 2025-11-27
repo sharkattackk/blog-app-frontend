@@ -11,7 +11,7 @@ export default function EditableBlogPost({ post }) {
         deleteBlogPost(postId);
     }
   return (
-    <div className="bg-white p-6 rounded-md shadow hover:shadow-lg transition">
+    <div className="flex flex-col bg-white p-6 rounded-md shadow hover:shadow-lg transition">
         <div className="flex flex-row justify-between">
             <h3 className="text-base font-semibold text-dark-gray ">
                 {post.title}
@@ -20,11 +20,11 @@ export default function EditableBlogPost({ post }) {
                 <FaTrash className="text-xs"/>
             </div>
         </div>
-        <p className="text-dark-gray/70 mt-2">{post.content}</p>
+        <div className="text-dark-gray/70 mt-2">{post.post}</div>
         
-      <p className="text-sm text-dark-gray/60 mt-4">
+      <div className="text-sm text-dark-gray/60 mt-4">
         Posted on {new Date().toLocaleDateString()}
-      </p>
+      </div>
     </div>
   );
 }
