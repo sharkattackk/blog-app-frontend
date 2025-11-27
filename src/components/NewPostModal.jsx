@@ -1,4 +1,7 @@
 import { useState } from "react";
+import { submitBlogPost } from "../functions/functions";
+import { v4 as uuidv4} from "uuid";
+import { fetchAuthSession } from "aws-amplify/auth";
 
 export default function NewPostModal({ close, addPost }) {
   const [title, setTitle] = useState("");
@@ -6,7 +9,15 @@ export default function NewPostModal({ close, addPost }) {
 
   const handleSubmit = () => {
     if (!title || !content) return;
-    addPost({ title, content });
+    const postObj = {
+      id: uuidv4(),
+      userId: 1,
+      title: title,
+      post: content,
+      created_at: new Date().toISOString().slice(0,19).replace('T', ' ')
+    }
+    addPost(postObj);
+    submitBlogPost(postObj);
     close();
   };
 

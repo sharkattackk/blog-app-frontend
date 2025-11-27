@@ -3,7 +3,7 @@ import { FaPlus } from "react-icons/fa";
 import NewPostModal from "../../components/NewPostModal";
 import { useState } from "react";
 import { useAppContext } from "../../AppContext";
-import EditableBlogPost from "../../components/admin/EditableBlogPost";
+import EditableBlogList from "../../components/admin/EditableBlogList";
 
 const Admin = () => {
     const [isModalOpen, setIsModalOpen] = useState(false);
@@ -22,7 +22,7 @@ const Admin = () => {
                  
             </button>
             <div>
-                <EditableBlogPost />
+                <EditableBlogList />
             </div>
             {isModalOpen && (
                 <NewPostModal 

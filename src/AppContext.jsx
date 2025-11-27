@@ -1,9 +1,9 @@
 import React, { createContext, useState, useEffect, useContext } from "react";
+import { readBlogPosts } from "./functions/functions";
 
 const AppContext = createContext();
 
 export const AppProvider = ({ children }) => {
-
     const [loading, setLoading] = useState(true);
     const [posts, setPosts] = useState([]);
 
@@ -11,7 +11,8 @@ export const AppProvider = ({ children }) => {
         async function fetchData() {
             try {
                 setLoading(true);
-
+                const blogPosts = await readBlogPosts();
+                setPosts(blogPosts);
                 
                 setLoading(false);
             } catch (error) {
@@ -27,8 +28,7 @@ export const AppProvider = ({ children }) => {
     // }
 
     const value = {
-        posts, setPosts
-        
+        posts, setPosts,
     };
 
     return <AppContext.Provider value={value}>{children}</AppContext.Provider>;
