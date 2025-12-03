@@ -12,10 +12,14 @@ export default function BlogList() {
     );
   }
 
+  const sortedPosts = [...posts].sort(
+    (a, b) => new Date(b.created_at) - new Date(a.created_at)
+  );
+
   return (
     <div className="w-full max-w-[850px] mx-auto px-4 py-10">
       <div className="flex flex-col space-y-10">
-        {posts.map((post) => (
+        {sortedPosts.map((post) => (
           <BlogPost key={post.id} post={post} />
         ))}
       </div>

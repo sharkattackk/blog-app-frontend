@@ -17,7 +17,7 @@ export default function ProfileHeader() {
         flex items-start space-x-6 px-8 py-6
         -mt-20
         bg-white
-        rounded-xl shadow-xl
+        rounded-md shadow-xl
         border border-white/30
         animate-fadeIn
       ">

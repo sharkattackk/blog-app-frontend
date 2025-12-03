@@ -6,7 +6,7 @@ export default function BlogPost({ post }) {
   return (
     <article className="
       bg-white
-      rounded-2xl shadow-lg
+      rounded-md shadow-lg
       border border-gray-200
       p-10
       transition-all duration-300
