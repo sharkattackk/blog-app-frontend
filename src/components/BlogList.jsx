@@ -1,14 +1,22 @@
+import { FaSadCry } from "react-icons/fa";
 import { useAppContext } from "../AppContext";
 import BlogPost from "./BlogPost";
 
 export default function BlogList() {
-  const { posts } = useAppContext();
+  const { loading, posts } = useAppContext();
 
-  if (!posts || posts.length === 0) {
+  if (!loading && (!posts || posts.length === 0)) {
     return (
-      <p className="text-gray-500 mt-10 text-center text-lg">
-        No blog posts yet. Create your first one!
-      </p>
+     <div className="h-full w-full flex flex-col items-center  ">
+        <div className="text-md text-med-gray/60 flex flex-col space-y-4 items-center bg-white rounded-md shadow-lg border border-gray-2002 mt-24 px-4 py-2">
+          <div className="text-gray-400">
+            <FaSadCry />
+          </div>
+          <div>
+            Minisa Hasn't Posted any blogs Yet
+          </div>
+        </div>
+      </div>
     );
   }
 
@@ -17,12 +25,19 @@ export default function BlogList() {
   );
 
   return (
-    <div className="w-full max-w-[850px] mx-auto px-4 py-10">
-      <div className="flex flex-col space-y-10">
-        {sortedPosts.map((post) => (
-          <BlogPost key={post.id} post={post} />
-        ))}
+    <div className="w-full h-full max-w-[850px] mx-auto px-4 py-10">
+      {!loading ? (
+        <div className="flex flex-col space-y-10">
+          {sortedPosts.map((post) => (
+            <BlogPost key={post.id} post={post} />
+          ))}
       </div>
+      ):(
+        <div className=" h-full w-full bg-white rounded-md shadow-lg border border-gray-200  ">
+          <div className="h-full w-full skeleton">
+          </div>
+        </div>
+      )}
     </div>
   );
 }

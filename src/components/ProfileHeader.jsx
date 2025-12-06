@@ -15,7 +15,7 @@ export default function ProfileHeader() {
       <div className="
         max-w-[900px] w-full
         flex items-start space-x-6 px-8 py-6
-        -mt-20
+        -mt-40
         bg-white
         rounded-md shadow-xl
         border border-white/30
@@ -41,7 +41,7 @@ export default function ProfileHeader() {
             molecular biology, genetics, and the art of scientific storytelling.
           </p>
 
-          <Link 
+          {true && (<Link 
             to="/admin"
             className="
               inline-block mt-2 w-fit
@@ -52,7 +52,7 @@ export default function ProfileHeader() {
             "
           >
             Create Post
-          </Link>
+          </Link>)}
         </div>
       </div>
     </div>

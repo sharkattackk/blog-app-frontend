@@ -28,6 +28,7 @@ export const AppProvider = ({ children }) => {
     // }
 
     const value = {
+        loading,
         posts, setPosts,
     };
 
