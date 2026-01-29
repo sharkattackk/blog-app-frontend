@@ -9,9 +9,11 @@ export default {
       colors: {
         "dark-gray": "#151419",
         "med-gray": "#23242A",
-        "favourite-colour": "#2596be",
-        "light-gray": "F8F8FF",
+        "favourite-colour": "#FFC0CB",
+        "light-gray": "#F8F8FF",
         "accent-blue": "#2c92d1",
+        "pale-blue": "#C5D2F8",
+        "main-accent": "#4F0C28",
       }
     },
   },
