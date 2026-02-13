@@ -23,7 +23,7 @@ const FieldSection = () => {
     <section className="w-full py-4">
       
       {/* Section Header */}
-      <div className="max-w-6xl mx-auto px-8 mb-4">
+      <div className="mx-auto px-8 mb-4">
         <p className="uppercase tracking-widest text-xs text-main-accent font-semibold mb-2">
           Explore the Blog
         </p>
@@ -33,7 +33,7 @@ const FieldSection = () => {
       </div>
 
       {/* Fields Grid */}
-      <div className="max-w-6xl mx-auto px-8 grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div className="mx-auto px-8 grid grid-cols-1 md:grid-cols-3 gap-8">
         {fields.map((field) => (
           <Link
             key={field.title}

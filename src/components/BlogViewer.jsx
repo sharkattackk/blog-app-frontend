@@ -19,7 +19,7 @@ const BlogViewer = () => {
     }, [setScrolled]);
 
     return(
-        <div ref={scrollRef} className="h-full overflow-hidden overflow-y-auto scrollable-div p-2">
+        <div ref={scrollRef} className="h-full overflow-hidden overflow-y-auto scrollable-div">
             <ProfileHeader />
             <FieldSection />
             <BlogList />

@@ -23,24 +23,24 @@ export default function ProfileHeader() {
   }, []);
 
   return (
-    <div className="relative w-full h-[85vh] rounded-xl overflow-hidden">
+    <div className="relative w-full h-[85vh] shadow-2xl overflow-hidden">
 
       {/* Background Image */}
       <img
         src="heropicture.jpg"
-        className="absolute inset-0 w-full h-full object-cover blur-md"
+        className="absolute inset-0 w-full h-full object-cover"
         alt=""
       />
 
       {/* Dark Overlay */}
-      {/* <div className="absolute inset-0 bg-black/60" /> */}
+      <div className="absolute inset-0 bg-black/40" />
 
       {/* Content */}
       <div className="relative z-10 h-full flex flex-col justify-end p-8">
         <div className="flex flex-row justify-between">
         <div className="flex flex-col max-w-4xl space-y-2 text-white">
           <div className="flex flex-row">
-            <div className="px-3 py-1 rounded-full backdrop-blur-md bg-white/10 inline-block text-sm">
+            <div className="px-3 py-1 rounded-full backdrop-blur-md bg-white/10 inline-block text-xs uppercase tracking-widest text-white/70">
               Investigative Genetics Journal
             </div>
           </div>
