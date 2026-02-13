@@ -105,9 +105,9 @@ export default function NavBar() {
           <button
             className="
               px-4 py-2
-              text-sm font-semibold
-              text-white
-              bg-main-accent
+              text-sm
+              text-black
+              bg-light-gray
               rounded-lg
               shadow
               hover:shadow-md
