@@ -7,6 +7,7 @@ export const AppProvider = ({ children }) => {
     const [loading, setLoading] = useState(true);
     const [posts, setPosts] = useState([]);
     const [latestBlogPost, setLatestBlogPost] = useState(null);
+    const [scrolled, setScrolled] = useState(false);
 
     useEffect(() => {
         async function fetchData() {
@@ -33,6 +34,7 @@ export const AppProvider = ({ children }) => {
         loading,
         posts, setPosts,
         latestBlogPost,
+        scrolled, setScrolled
     };
 
     return <AppContext.Provider value={value}>{children}</AppContext.Provider>;
