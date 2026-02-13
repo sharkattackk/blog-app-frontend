@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 const fields = [
   {
-    title: "Genetic Councilling",
+    title: "Genetic Counselling",
     image: "./yeth.png",
     path: "/category/travel",
   },
