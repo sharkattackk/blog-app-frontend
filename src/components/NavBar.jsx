@@ -5,8 +5,8 @@ import { SocialIcon } from "react-social-icons";
 export default function NavBar() {
   const categories = [
     "Genetic Counselling",
-    "Molecular Biology",
-    "Animals",
+    "Biology",
+    "Genetics",
   ];
 
   return (
