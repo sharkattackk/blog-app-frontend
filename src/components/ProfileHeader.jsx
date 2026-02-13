@@ -1,100 +1,123 @@
-import { Link } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { useAppContext } from "../AppContext";
 
 export default function ProfileHeader() {
+
+  const {latestBlogPost} = useAppContext();
+  console.log(latestBlogPost)
+  const slides = [
+    "This blog is my way of exploring genetics through research, reflection, and curiosity.",
+    "Genetics is often presented as complicated, technical, or distant from daily life — yet it shapes who we are and our most personal experiences.",
+    "My goal is to make science feel personal, clear, and relevant beyond the textbook — so you leave seeing biology in a new light."
+  ];
+
+  const [current, setCurrent] = useState(0);
+
+  // Auto cycle every 10 seconds
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrent((prev) => (prev + 1) % slides.length);
+    }, 10000);
+
+    return () => clearInterval(interval);
+  }, []);
+
   return (
-    <section className="relative w-full">
-      <div className="absolute inset-0">
-        <div className="h-full w-full bg-gradient-to-br from-main-accent via-main-accent/90 to-black" />
-        <div className="absolute -top-32 -right-32 h-96 w-96 bg-pale-blue/20 rounded-full blur-3xl" />
-        <div className="absolute top-1/3 -left-40 h-96 w-96 bg-pale-blue/10 rounded-full blur-3xl" />
-      </div>
-      <div className="relative max-w-6xl mx-auto px-8 py-14">
-        <div className="backdrop-blur-md bg-pale-blue/90 border border-white/40 rounded-2xl shadow-2xl
-          p-10 md:p-14 grid md:grid-cols-2 gap-10">
-          <div className="flex flex-col justify-center space-y-6">
-            <span className="uppercase tracking-widest text-xs text-main-accent font-semibold">
-              Investigative Genetic Biology Blog
-            </span>
+    <div className="relative w-full h-[85vh] rounded-xl overflow-hidden">
 
-            <h1 className="text-4xl md:text-5xl font-extrabold text-gray-900 leading-tight">
-              Discussing Interesting Things
-              <br />
-              <span className="text-main-accent">One Gene at a Time</span>
-            </h1>
+      {/* Background Image */}
+      <img
+        src="InsaneImg_ar.png"
+        className="absolute inset-0 w-full h-full object-cover blur-sm"
+        alt=""
+      />
 
-            <p className="text-gray-700 text-lg leading-relaxed">
-              Deep dives into genetics, molecular biology, and the hidden
-              mechanisms that shape life — explained through research,
-              storytelling, and curiosity.
-            </p>
+      {/* Dark Overlay */}
+      <div className="absolute inset-0 bg-black/60" />
 
-            <div className="flex items-center space-x-4 pt-2">
-              <Link
-                to="/posts"
-                className="
-                  px-6 py-3
-                  bg-main-accent
-                  text-white font-semibold
-                  rounded-lg
-                  shadow-md
-                  hover:scale-[1.03]
-                  hover:shadow-lg
-                  transition
-                "
-              >
-                Explore Articles
-              </Link>
-
-              <Link
-                to="/about"
-                className="
-                  px-6 py-3
-                  border border-main-accent/40
-                  text-main-accent font-semibold
-                  rounded-lg
-                  hover:bg-main-accent/10
-                  transition
-                "
-              >
-                About the Author
-              </Link>
+      {/* Content */}
+      <div className="relative z-10 h-full flex flex-col justify-end p-8">
+        <div className="flex flex-row justify-between">
+        <div className="flex flex-col max-w-4xl space-y-2 text-white">
+          <div className="flex flex-row">
+            <div className="px-3 py-1 rounded-full backdrop-blur-md bg-white/10 inline-block text-sm">
+              Investigative Genetics Journal
             </div>
           </div>
 
-          {/* Right: Visual / Accent */}
-          <div className="relative flex items-center justify-center">
-            <div className="
-              relative
-              h-64 w-64 md:h-72 md:w-72
-              rounded-full
-              bg-main-accent
-              flex items-center justify-center
-              shadow-xl
-            ">
-              <div className="
-                absolute inset-3
-                rounded-full
-                bg-pale-blue
-                flex items-center justify-center
-                text-main-accent
-                text-6xl
-                font-bold
-              ">
-                DNA
-              </div>
+          <div className="text-4xl md:text-5xl font-extrabold leading-tight">
+            Making Genetics Human And Relevant
+          </div>
 
-              {/* Orbit ring */}
-              <div className="
-                absolute inset-0
-                rounded-full
-                border border-white/30
-                animate-spin-slow
-              " />
-            </div>
+          {/* Slide Text */}
+          <div className="min-h-[80px]">
+            {slides.map((text, index) => (
+              <p
+                key={index}
+                className={`
+                  transition-opacity duration-700 ease-in-out
+                  text-lg leading-relaxed text-white/90
+                  ${current === index ? "block" : "hidden"}
+                `}
+              >
+                {text}
+              </p>
+            ))}
+          </div>
+
+          {/* Dots */}
+          <div className="flex space-x-3">
+            {slides.map((_, index) => (
+              <button
+                key={index}
+                onClick={() => setCurrent(index)}
+                className={`
+                  h-2.5 w-2.5 rounded-full transition-all duration-300
+                  ${current === index
+                    ? "bg-white scale-125"
+                    : "bg-white/40 hover:bg-white/70"}
+                `}
+              />
+            ))}
           </div>
 
         </div>
+        <div className="hidden lg:flex items-end">
+          {latestBlogPost && (
+            <div className="
+              relative
+              max-w-sm
+              p-6
+              rounded-2xl
+              bg-white/10
+              backdrop-blur-xl
+              border border-white/20
+              text-white
+              shadow-xl
+              transition
+              hover:bg-white/20
+              hover:scale-[1.02]
+              cursor-pointer
+            ">
+              <div className="text-xs uppercase tracking-widest text-white/70 mb-3">
+                Latest Post
+              </div>
+
+              <div className="text-xl font-bold leading-snug mb-4">
+                {latestBlogPost.title}
+              </div>
+
+              <div className="text-sm text-white/70 flex items-center space-x-2">
+                <span>{latestBlogPost.readTime} 2 min read</span>
+                <span className="h-1 w-1 rounded-full bg-white/60" />
+                <span>New</span>
+              </div>
+            </div>
+          )}
+        </div>
+
+        </div>
       </div>
-    </section>
+    </div>
   );
 }

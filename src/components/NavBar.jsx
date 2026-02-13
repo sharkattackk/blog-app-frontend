@@ -10,55 +10,26 @@ export default function NavBar() {
   ];
 
   return (
-    <nav className="
-      sticky top-0 z-50
-      w-full
-      backdrop-blur-md
-      bg-pale-blue/90
-      border-b border-white/40
-      shadow-sm
-    ">
-      <div className="max-w-7xl mx-auto px-8 py-4 flex items-center justify-between">
-
-        {/* Left */}
+    <nav className="fixed top-0 z-50 w-full pr-10 pl-4 py-4">
+      <div className="mx-auto px-8 py-4 flex items-center justify-between rounded-xl">
         <div className="flex items-center space-x-16">
           <Link to="/" className="group">
             <span className="
-              text-2xl font-extrabold tracking-wide
-              text-gray-900
-              group-hover:text-main-accent
-              transition
+              text-2xl tracking-wide font-semibold text-white
             ">
               KANE
             </span>
           </Link>
 
-          <div className="hidden md:flex items-center space-x-8 text-sm">
-            <Link
-              to="/"
-              className="
-                font-medium
-                text-gray-700
-                hover:text-main-accent
-                transition
-              "
-            >
+          <div className="hidden md:flex items-center space-x-8 text-base text-white font-semibold">
+            <div>
               Latest
-            </Link>
+            </div>
 
-            {categories.map((c) => (
-              <Link
-                key={c}
-                to={`/category/${c.toLowerCase().replace(/\s+/g, "-")}`}
-                className="
-                  font-medium
-                  text-gray-700
-                  hover:text-main-accent
-                  transition
-                "
-              >
+            {categories.map((c, idx) => (
+              <div key={idx}>
                 {c}
-              </Link>
+              </div>
             ))}
           </div>
         </div>
@@ -72,24 +43,24 @@ export default function NavBar() {
               url="https://www.instagram.com"
               style={{ height: 22, width: 22 }}
               bgColor="transparent"
-              fgColor="#4F0C28"
+              fgColor="white"
             />
             <SocialIcon
               url="https://ca.linkedin.com"
               style={{ height: 22, width: 22 }}
               bgColor="transparent"
-              fgColor="#4F0C28"
+              fgColor="white"
             />
             <SocialIcon
               url="https://www.facebook.com"
               style={{ height: 22, width: 22 }}
               bgColor="transparent"
-              fgColor="#4F0C28"
+              fgColor="white"
             />
           </div>
 
           {/* Divider */}
-          <div className="hidden sm:block h-6 w-px bg-gray-300/60" />
+          <div className="hidden sm:block h-6 w-px bg-white" />
 
           {/* Subscribe */}
           <button

@@ -18,15 +18,12 @@ function App() {
   return (
     <AppProvider>
       <Router>
-        <div id="home" className="flex flex-col scroll-smooth h-screen overflow-y-hidden">
-          <div className="">
+        <div id="home" className="flex flex-col scroll-smooth h-[100vh] overflow-y-hidden pl-2 py-2">
             <NavBar />
-          </div>
             <Routes>
               <Route path="/" element={<BlogViewer />} />
               <Route path="/admin" element={<Admin  />}/>
             </Routes>
-          
         </div>
       </Router>
     </AppProvider>

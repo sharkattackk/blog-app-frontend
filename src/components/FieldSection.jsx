@@ -20,7 +20,7 @@ const fields = [
 
 const FieldSection = () => {
   return (
-    <section className="w-full py-10 bg-pale-blue/40">
+    <section className="w-full py-10">
       
       {/* Section Header */}
       <div className="max-w-6xl mx-auto px-8 mb-16 text-center">

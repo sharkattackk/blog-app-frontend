@@ -3,9 +3,13 @@
 @tailwind utilities;
 
 
-body {
-  font-family: 'Duru sans', sans-serif;
+@layer base {
+  html {
+    @apply font-sans;
+  }
 }
+
+
 .scrollable-div::-webkit-scrollbar {
   width: 8px;
 }
@@ -18,14 +22,11 @@ html {
   scroll-behavior: smooth;
 }
 
-:root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
 
-  color-scheme: dark;
+:root {
+  line-height: 1.5;
+  
   color: #151419;
-  background-color: #C5D2F8;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -55,6 +56,7 @@ a:hover {
     background-color: #f9f9f9;
   }
 }
+
 
 
 .scrollable-div::-webkit-scrollbar {

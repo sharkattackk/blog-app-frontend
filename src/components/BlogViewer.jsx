@@ -4,7 +4,7 @@ import FieldSection from './FieldSection'
 
 const BlogViewer = () => {
     return(
-        <div className="h-full flex flex-col items-start overflow-hidden overflow-y-auto scrollable-div">
+        <div className="h-full overflow-hidden overflow-y-auto scrollable-div pr-2">
             <ProfileHeader />
             <FieldSection />
             <BlogList />

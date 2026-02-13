@@ -6,6 +6,7 @@ const AppContext = createContext();
 export const AppProvider = ({ children }) => {
     const [loading, setLoading] = useState(true);
     const [posts, setPosts] = useState([]);
+    const [latestBlogPost, setLatestBlogPost] = useState(null);
 
     useEffect(() => {
         async function fetchData() {
@@ -13,6 +14,7 @@ export const AppProvider = ({ children }) => {
                 setLoading(true);
                 const blogPosts = await readBlogPosts();
                 setPosts(blogPosts);
+                setLatestBlogPost(blogPosts[0]);
                 
                 setLoading(false);
             } catch (error) {
@@ -30,6 +32,7 @@ export const AppProvider = ({ children }) => {
     const value = {
         loading,
         posts, setPosts,
+        latestBlogPost,
     };
 
     return <AppContext.Provider value={value}>{children}</AppContext.Provider>;
