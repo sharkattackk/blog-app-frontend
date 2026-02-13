@@ -27,13 +27,13 @@ export default function ProfileHeader() {
 
       {/* Background Image */}
       <img
-        src="InsaneImg_ar.png"
-        className="absolute inset-0 w-full h-full object-cover blur-sm"
+        src="heropicture.jpg"
+        className="absolute inset-0 w-full h-full object-cover blur-md"
         alt=""
       />
 
       {/* Dark Overlay */}
-      <div className="absolute inset-0 bg-black/60" />
+      {/* <div className="absolute inset-0 bg-black/60" /> */}
 
       {/* Content */}
       <div className="relative z-10 h-full flex flex-col justify-end p-8">

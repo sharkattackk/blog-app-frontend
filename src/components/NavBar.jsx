@@ -93,20 +93,8 @@ export default function NavBar() {
         <div className="flex items-center space-x-6">
           <div className="hidden sm:flex items-center space-x-2">
             <SocialIcon
-              url="https://www.instagram.com"
-              style={{ height: 20, width: 20 }}
-              bgColor="transparent"
-              fgColor="white"
-            />
-            <SocialIcon
-              url="https://ca.linkedin.com"
-              style={{ height: 20, width: 20 }}
-              bgColor="transparent"
-              fgColor="white"
-            />
-            <SocialIcon
-              url="https://www.facebook.com"
-              style={{ height: 20, width: 20 }}
+              url="https://ca.linkedin.com/in/minisakane"
+              style={{ height: 30, width: 40 }}
               bgColor="transparent"
               fgColor="white"
             />

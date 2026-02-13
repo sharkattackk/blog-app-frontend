@@ -20,10 +20,10 @@ const fields = [
 
 const FieldSection = () => {
   return (
-    <section className="w-full py-10">
+    <section className="w-full py-4">
       
       {/* Section Header */}
-      <div className="max-w-6xl mx-auto px-8 mb-16 text-center">
+      <div className="max-w-6xl mx-auto px-8 mb-4 text-center">
         <p className="uppercase tracking-widest text-xs text-main-accent font-semibold mb-2">
           Explore the Blog
         </p>
