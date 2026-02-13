@@ -23,7 +23,7 @@ const FieldSection = () => {
     <section className="w-full py-4">
       
       {/* Section Header */}
-      <div className="max-w-6xl mx-auto px-8 mb-4 text-center">
+      <div className="max-w-6xl mx-auto px-8 mb-4">
         <p className="uppercase tracking-widest text-xs text-main-accent font-semibold mb-2">
           Explore the Blog
         </p>

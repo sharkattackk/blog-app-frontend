@@ -49,6 +49,7 @@ async function submitBlogPost(blogPost){
             body: JSON.stringify({runMode: "upsert", blogPost: blogPost})
         });
         const data = await response.json();
+        console.log(data)
         return data;
     } catch(error){
 

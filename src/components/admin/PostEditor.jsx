@@ -27,15 +27,15 @@ export default function PostEditor({ post = {}, close, addPost }) {
       userId: 1,
       title,
       post: content,
-    //   attachments: files.map((f) => f.name), // You can handle upload logic here
-      created_at: new Date().toISOString().slice(0, 19).replace("T", " "),
+      attachments: files, // You can handle upload logic here
+      created_at: post.created_at ? post.created_at :  new Date().toISOString().slice(0, 19).replace("T", " "),
     };
-    console.log(postObj)
+    console.log(postObj);
     addPost(postObj);
     submitBlogPost(postObj);
     close();
   };
-  console.log(content)
+  console.log(files)
 
   return (
     <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-start pt-20 overflow-y-hidden z-50">

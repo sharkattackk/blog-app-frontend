@@ -38,7 +38,11 @@ export default function EditableBlogPost({ post }) {
         </div>
         
       <div className="text-sm text-dark-gray/60 mt-4">
-        Posted on {new Date().toLocaleDateString()}
+        Posted on {new Date(post.created_at).toLocaleString("en-US", {
+              year: "numeric",
+              month: "long",
+              day: "numeric",
+            })}
       </div>
     </div>
   );
