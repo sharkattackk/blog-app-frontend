@@ -7,8 +7,8 @@ export default function ProfileHeader() {
   console.log(latestBlogPost)
   const slides = [
     "This blog is my way of exploring genetics through research, reflection, and curiosity.",
-    "Genetics is often presented as complicated, technical, or distant from daily life — yet it shapes who we are and our most personal experiences.",
-    "My goal is to make science feel personal, clear, and relevant beyond the textbook — so you leave seeing biology in a new light."
+    "Genetics is often presented as complicated, technical, or distant from daily life, but it shapes who we are and our very personal experiences.",
+    "I want to explain genetics in a way that feels clear and relevant, so more people can connect with its beauty. Whether you learn something new or see your studies in a new light, my goal is to make science feel personal and easy to understand beyond the textbook."
   ];
 
   const [current, setCurrent] = useState(0);
@@ -50,7 +50,7 @@ export default function ProfileHeader() {
           </div>
 
           {/* Slide Text */}
-          <div className="min-h-[80px]">
+          <div className="min-h-[100px]">
             {slides.map((text, index) => (
               <p
                 key={index}
