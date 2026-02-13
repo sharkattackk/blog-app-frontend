@@ -43,7 +43,7 @@ export default function BlogList() {
     <section className="w-full py-20">
       
       {/* Section Header */}
-      <div className="max-w-[850px] mx-auto px-4 mb-14">
+      <div className="mx-auto px-4 mb-14">
         <p className="uppercase tracking-widest text-xs text-main-accent font-semibold mb-2">
           Research & Writing
         </p>
@@ -53,7 +53,7 @@ export default function BlogList() {
       </div>
 
       {/* Content */}
-      <div className="w-full max-w-[850px] mx-auto px-4">
+      <div className="w-full  mx-auto px-4">
         {!loading ? (
           <div className="flex flex-col space-y-14">
             {sortedPosts.map((post) => (

@@ -3,6 +3,7 @@ import BlogList from './BlogList'
 import FieldSection from './FieldSection'
 import { useAppContext } from '../AppContext'
 import { useEffect, useRef } from 'react'
+import PageFooter from './PageFooter'
 
 const BlogViewer = () => {
     const {setScrolled} = useAppContext();
@@ -23,6 +24,7 @@ const BlogViewer = () => {
             <ProfileHeader />
             <FieldSection />
             <BlogList />
+            <PageFooter />
         </div>
     )
 }

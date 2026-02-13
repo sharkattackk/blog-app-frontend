@@ -32,7 +32,6 @@ const FieldSection = () => {
         </h2>
       </div>
 
-      {/* Fields Grid */}
       <div className="mx-auto px-8 grid grid-cols-1 md:grid-cols-3 gap-8">
         {fields.map((field) => (
           <Link
