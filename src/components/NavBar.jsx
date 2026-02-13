@@ -33,7 +33,10 @@ export default function NavBar() {
       >
         {/* Left */}
         <div className="flex items-center space-x-16">
-          <Link to="/" className="group">
+          <Link to="/" className="group flex flex-row items-center space-x-4">
+            <div>
+              <img src="dna_icon.png" className="w-7 h-8" /> 
+            </div>
             <span className="text-2xl tracking-wide font-semibold text-white">
               KANETICS
             </span>
@@ -89,7 +92,6 @@ export default function NavBar() {
           </div>
         </div>
 
-        {/* Right */}
         <div className="flex items-center space-x-6">
           <div className="hidden sm:flex items-center space-x-2">
             <SocialIcon

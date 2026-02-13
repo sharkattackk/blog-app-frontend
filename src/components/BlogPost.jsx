@@ -1,13 +1,10 @@
 export default function BlogPost({ post }) {
-  const paragraphs = post.post
-    .split(/\n\s*\n/) // split on blank lines
-    .filter(Boolean);
 
   const coverImage = post.cover_image ?? "/default-blog-banner.jpg";
 
   return (
     <article className="
-      bg-med-gray rounded-xl overflow-hidden shadow-md border border-gray-100 
+      rounded-xl overflow-hidden shadow-md
       transition-all duration-300 hover:shadow-xl hover:-translate-y-1
     ">
       
