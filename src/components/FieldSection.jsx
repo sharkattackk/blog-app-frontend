@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 const fields = [
   {
-    title: "Genetics",
+    title: "Genetic Councilling",
     image: "./yeth.png",
     path: "/category/travel",
   },
@@ -12,7 +12,7 @@ const fields = [
     path: "/category/biology",
   },
   {
-    title: "Animals",
+    title: "Genetics",
     image: "./yeth.png",
     path: "/category/animals",
   },
