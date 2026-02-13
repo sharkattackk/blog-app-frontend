@@ -7,7 +7,7 @@ export default function BlogPost({ post }) {
 
   return (
     <article className="
-      bg-white rounded-xl overflow-hidden shadow-md border border-gray-100 
+      bg-med-gray rounded-xl overflow-hidden shadow-md border border-gray-100 
       transition-all duration-300 hover:shadow-xl hover:-translate-y-1
     ">
       
@@ -50,9 +50,10 @@ export default function BlogPost({ post }) {
 
         {/* Body */}
         <div className="mt-6 space-y-4 text-gray-700 text-lg leading-relaxed">
-          {paragraphs.map((para, index) => (
-            <p key={index}>{para}</p>
-          ))}
+          <div
+              className="text-dark-gray/70 mt-2"
+              dangerouslySetInnerHTML={{ __html: post.post }}
+            />
         </div>
       </div>
 

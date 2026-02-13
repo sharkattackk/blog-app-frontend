@@ -8,7 +8,7 @@ export default {
       },
       colors: {
         "dark-gray": "#151419",
-        "med-gray": "#23242A",
+        "med-gray": "#bbbdc7",
         "favourite-colour": "#4287f5",
         "light-gray": "#F8F8FF",
         "accent-blue": "#2c92d1",

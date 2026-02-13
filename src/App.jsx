@@ -10,6 +10,7 @@ import { AppProvider } from './AppContext'
 import Admint from './pages/Admin/Admin'
 import BlogViewer from './components/BlogViewer'
 import Admin from './pages/Admin/Admin'
+import { AdminProvider } from './AdminContext'
 
 Amplify.configure(awsconfig)
 
@@ -22,7 +23,7 @@ function App() {
             <NavBar />
             <Routes>
               <Route path="/" element={<BlogViewer />} />
-              <Route path="/admin" element={<Admin  />}/>
+              <Route path="/admin" element={<AdminProvider><Admin  /></AdminProvider>}/>
             </Routes>
         </div>
       </Router>

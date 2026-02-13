@@ -46,7 +46,7 @@ async function submitBlogPost(blogPost){
                 "Content-type": "application/json",
                 Authorization: `Bearer ${jwt}`,
             },
-            body: JSON.stringify({runMode: "submit", blogPost: blogPost})
+            body: JSON.stringify({runMode: "upsert", blogPost: blogPost})
         });
         const data = await response.json();
         return data;

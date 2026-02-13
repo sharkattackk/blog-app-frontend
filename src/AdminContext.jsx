@@ -1,0 +1,48 @@
+import React, { createContext, useState, useEffect, useContext } from "react";
+import { readBlogPosts } from "./functions/functions";
+
+const AdminContext = createContext();
+
+export const AdminProvider = ({ children }) => {
+    const [loading, setLoading] = useState(true);
+    // const [posts, setPosts] = useState([]);
+    // const [latestBlogPost, setLatestBlogPost] = useState(null);
+    // const [scrolled, setScrolled] = useState(false);
+    const [openEditor, setOpenEditor] = useState(null);
+
+    // useEffect(() => {
+    //     async function fetchData() {
+    //         try {
+    //             setLoading(true);
+    //             const blogPosts = await readBlogPosts();
+    //             setPosts(blogPosts);
+    //             setLatestBlogPost(blogPosts[0]);
+                
+    //             setLoading(false);
+    //         } catch (error) {
+    //             console.error("Failed to fetch initial app data:", error);
+    //         }
+    //     }
+
+    //     fetchData();
+    // }, []);
+
+    // if (loading) {
+    //     return <Fallback main={true} />;
+    // }
+
+    const value = {
+        loading,
+        openEditor, setOpenEditor
+        // posts, setPosts,
+        // latestBlogPost,
+        // scrolled, setScrolled
+    };
+
+    return <AdminContext.Provider value={value}>{children}</AdminContext.Provider>;
+
+};
+
+export function useAdminContext (){
+    return useContext(AdminContext)
+}

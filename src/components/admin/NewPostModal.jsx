@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { submitBlogPost } from "../functions/functions";
+import { submitBlogPost } from "../../functions/functions";
 import { v4 as uuidv4} from "uuid";
 import { fetchAuthSession } from "aws-amplify/auth";
 

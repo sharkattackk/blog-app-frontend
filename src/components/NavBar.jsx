@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react";
 import { FaSearch } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { SocialIcon } from "react-social-icons";
 import { useAppContext } from "../AppContext";
 
 export default function NavBar() {
-  const { scrolled} = useAppContext();
+  const {scrolled} = useAppContext();
 
   const categories = [
     "Genetic Counselling",
@@ -13,11 +13,12 @@ export default function NavBar() {
     "Genetics",
   ];
 
-
+  const location = useLocation();
+  
   return (
     <nav
       className={`fixed top-0 z-50 w-full transition-all duration-300 ease-in-out
-        ${scrolled
+        ${scrolled || location.pathname === "/admin"
           ? "bg-black/40 backdrop-blur-lg"
           : "bg-transparent"}
       `}
@@ -34,7 +35,7 @@ export default function NavBar() {
         <div className="flex items-center space-x-16">
           <Link to="/" className="group">
             <span className="text-2xl tracking-wide font-semibold text-white">
-              KANE
+              KANETICS
             </span>
           </Link>
 

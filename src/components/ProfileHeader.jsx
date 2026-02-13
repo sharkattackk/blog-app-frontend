@@ -45,7 +45,7 @@ export default function ProfileHeader() {
             </div>
           </div>
 
-          <div className="text-4xl md:text-5xl font-extrabold leading-tight">
+          <div className="text-4xl md:text-5xl leading-tight">
             Making Genetics Human And Relevant
           </div>
 
@@ -99,8 +99,15 @@ export default function ProfileHeader() {
               hover:scale-[1.02]
               cursor-pointer
             ">
-              <div className="text-xs uppercase tracking-widest text-white/70 mb-3">
-                Latest Post
+              <div className="flex flex-row justify-between items-center mb-3">
+                <div className="text-xs uppercase tracking-widest text-white/70">
+                  Latest Post
+                </div>
+                <div className="flex flex-row items-center space-x-2">
+                  <img src="minisa_kane.jpg" className="w-8 h-8 rounded-full"/>
+                  <div>Minisa Kane</div>
+                  
+                </div>
               </div>
 
               <div className="text-xl font-bold leading-snug mb-4">
