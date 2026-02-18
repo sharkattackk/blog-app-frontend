@@ -13,13 +13,13 @@ async function userJWT(){
 
 async function readBlogPosts(firstIndex, lastIndex){
     const jwt = await userJWT();
-    const apiUrl = "https://c01uegcwci.execute-api.ca-central-1.amazonaws.com/default/sql-access"
+    const apiUrl = " https://379lp29w69.execute-api.ca-central-1.amazonaws.com/default/blog-app-read"
+    console.log(jwt)
     try{
         const response = await fetch(apiUrl, {
             method: "POST",
             headers: {
                 "Content-type": "application/json",
-                Authorization: `Bearer ${jwt}`,
             },
             body: JSON.stringify({runMode: "read", firstIndex: firstIndex, lastIndex: lastIndex})
         });

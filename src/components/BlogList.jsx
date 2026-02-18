@@ -35,9 +35,9 @@ export default function BlogList() {
     );
   }
 
-  const sortedPosts = [...posts].sort(
+  const sortedPosts = posts ? [...posts].sort(
     (a, b) => new Date(b.created_at) - new Date(a.created_at)
-  );
+  ) : [];
 
   return (
     <section className="w-full py-20">
