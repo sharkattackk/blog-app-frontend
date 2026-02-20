@@ -1,10 +1,11 @@
 import { useEffect, useState } from "react";
 import { useAppContext } from "../AppContext";
+import { Link } from "react-router-dom";
+
 
 export default function ProfileHeader() {
 
-  const {latestBlogPost} = useAppContext();
-  console.log(latestBlogPost)
+  const {latestBlogPost, user} = useAppContext();
   const slides = [
     "This blog is my way of exploring genetics through research, reflection, and curiosity.",
     "Genetics is often presented as complicated, technical, or distant from daily life, but it shapes who we are and our very personal experiences.",
@@ -21,6 +22,8 @@ export default function ProfileHeader() {
 
     return () => clearInterval(interval);
   }, []);
+
+  console.log(user)
 
   return (
     <div className="relative w-full h-[85vh] shadow-2xl overflow-hidden">
@@ -39,10 +42,17 @@ export default function ProfileHeader() {
       <div className="relative z-10 h-full flex flex-col justify-end p-8">
         <div className="flex flex-row justify-between">
         <div className="flex flex-col max-w-4xl space-y-2 text-white">
-          <div className="flex flex-row">
+          <div className="flex flex-row space-x-2">
             <div className="px-3 py-1 rounded-full backdrop-blur-md bg-white/10 inline-block text-xs uppercase tracking-widest text-white/70">
               Investigative Genetics Journal
             </div>
+            {(user?.userId === "dc0d85e8-3001-70b1-d5b2-4e09ef60f366" || user?.userId === "3c5d3578-30e1-7018-79c1-801189c79500") && (
+              <Link to="/admin">
+                <div className="px-3 py-1 rounded-full backdrop-blur-md bg-white/10 inline-block text-xs uppercase tracking-widest text-white/70">
+                  HI MINISA - Admin panel
+                </div>
+              </Link>
+              )}        
           </div>
 
           <div className="text-4xl md:text-5xl leading-tight">
@@ -82,6 +92,7 @@ export default function ProfileHeader() {
           </div>
 
         </div>
+        {/*  */}
         <div className="hidden lg:flex items-end">
           {latestBlogPost && (
             <div className="
@@ -99,6 +110,7 @@ export default function ProfileHeader() {
               hover:scale-[1.02]
               cursor-pointer
             ">
+              <div>Admin Panel</div>
               <div className="flex flex-row justify-between items-center mb-3">
                 <div className="text-xs uppercase tracking-widest text-white/70">
                   Latest Post
